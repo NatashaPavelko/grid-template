@@ -1,0 +1,42 @@
+.about {
+  background-color: $color-gray-light;
+  padding-top: 100px;
+  padding-bottom: 65px;
+  letter-spacing: 0.055em;
+}
+
+.about__title {
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  color: $color-primary;
+  line-height: 1.2em;
+  font-family: $font-header;
+  margin-top: 0;
+  margin-bottom: 49px;
+}
+
+.about__container {
+  display: grid;
+  max-width: $ul;
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  grid-template-columns: 1fr 271px;
+  grid-gap: 100px;
+}
+
+.about__content {
+  font-size: 1.125rem;
+  font-family: $font-main;
+  line-height: 1.35;
+}
+
+.about__image img {
+  display: grid;
+  max-width: 100%;
+  min-height: 480px;
+
+  align-content: center;
+  justify-items: center;
+}
