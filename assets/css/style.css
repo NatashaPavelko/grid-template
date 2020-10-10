@@ -876,13 +876,103 @@ a {
   line-height: 1.35;
 }
 
-.about__image img {
+.about__content p:first-of-type::after {
+  right: -50px;
+}
+
+.about__content p:first-of-type {
+  position: relative;
+  margin-top: -5px;
+}
+
+.about__content p:first-of-type::after {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 200px;
+  content: "";
+  background-color: #707070;
+}
+
+.about__content p:last-of-type {
+  margin: 0;
+}
+
+.about__image {
   display: grid;
-  max-width: 100%;
-  min-height: 480px;
   -ms-flex-line-pack: center;
       align-content: center;
   justify-items: center;
+}
+
+.about__image img {
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.form {
+  background-color: #2d3651;
+  padding: 30px 0;
+}
+
+.form__container {
+  max-width: 1340px;
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.form-item__input {
+  display: block;
+  height: 60px;
+  width: 100%;
+  background-color: #2d3651;
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  -webkit-transition: background-color 0.5s, border-color 0.5s;
+  -o-transition: background-color 0.5s, border-color 0.5s;
+  transition: background-color 0.5s, border-color 0.5s;
+  border: 2px solid rgba(255, 255, 255, 0);
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.form-item__input:hover,
+.form-item__input:focus {
+  border-color: rgba(255, 255, 255, 0.15);
+  border-bottom-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-item__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.8;
+  background-color: #2d3651;
+}
+
+.form .btn-accent {
+  color: #ffffff;
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.form .btn-accent:hover,
+.form .btn-accent:focus {
+  cursor: pointer;
+  border-color: #ffffff;
+  background-color: #d66926;
 }
 
 @media (min-width: 576px) {

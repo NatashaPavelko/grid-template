@@ -32,11 +32,33 @@
   line-height: 1.35;
 }
 
-.about__image img {
-  display: grid;
-  max-width: 100%;
-  min-height: 480px;
+.about__content p:first-of-type::after {
+  right: -50px;
+}
 
+.about__content p:first-of-type {
+  position: relative;
+  margin-top: -5px;
+}
+
+.about__content p:first-of-type::after {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 200px;
+  content: "";
+  background-color: #707070;
+}
+.about__content p:last-of-type {
+  margin: 0;
+}
+
+.about__image {
+  display: grid;
   align-content: center;
   justify-items: center;
+}
+.about__image img {
+  max-width: 100%;
+  min-height: 480px;
 }
