@@ -1,61 +1,66 @@
 .form {
   background-color: $color-primary;
   padding: 30px 0;
-}
-.form__container {
-  max-width: $ul;
-  margin: auto;
-  padding-right: 20px;
-  padding-left: 20px;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-}
+  &__container {
+    @extend %container;
 
-.form-item__input {
-  display: block;
-  height: 60px;
-  width: 100%;
-  background-color: $color-primary;
-  font-size: 1.125rem;
-  letter-spacing: 0.15em;
-  color: $color-light;
-  transition: background-color 0.5s, border-color 0.5s;
-  border: 2px solid rgba(255, 255, 255, 0);
-  border-bottom-color: rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.05);
-  padding-right: 30px;
-  padding-left: 30px;
-}
+    display: grid;
+    grid-gap: $gap;
 
-.form-item__input:hover,
-.form-item__input:focus {
-  border-color: rgba(255, 255, 255, 0.15);
-  border-bottom-color: $color-light;
-  background-color: rgba(255, 255, 255, 0.15);
-}
+    @include md-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 
-.form-item__overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0.8;
-  background-color: $color-primary;
-}
+  &-item {
+    @include md-sm {
+      &:nth-of-type(1) {
+        grid-column: 1 / span 2;
+      }
+    }
+  }
 
-.form .btn-accent {
-  color: $color-light;
-  width: 100%;
-  border-color: rgba(255, 255, 255, 0);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-}
-.form .btn-accent:hover,
-.form .btn-accent:focus {
-  cursor: pointer;
-  border-color: $color-light;
-  background-color: $color-accent;
+  &-item__input {
+    display: block;
+    height: 60px;
+    width: 100%;
+    background-color: $color-primary;
+    font-size: 1.125rem;
+    letter-spacing: 0.15em;
+    color: $color-light;
+    transition: background-color 0.5s, border-color 0.5s;
+    border: 2px solid rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.25);
+    background-color: rgba($color-light, 0.05);
+    padding-right: 30px;
+    padding-left: 30px;
+
+    &:hover,
+    &:focus {
+      border-color: rgba($color-light, 0.15);
+      border-bottom-color: $color-light;
+      background-color: rgba($color-light, 0.15);
+
+      &::placeholder,
+      &::placeholder {
+        color: $color-light;
+      }
+    }
+  }
+
+  & .btn-accent {
+    color: $color-light;
+    width: 100%;
+    border-color: rgba($color-light, 0);
+    background-color: rgba($color-light, 0.1);
+    border-bottom-color: rgba($color-light, 0.2);
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      border-color: $color-light;
+      background-color: $color-accent;
+    }
+  }
 }
