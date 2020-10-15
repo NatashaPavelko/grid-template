@@ -1,4 +1,5 @@
 .header-navbar {
+  letter-spacing: 0.1em;
   @include md {
     display: flex;
     justify-content: flex-end;
@@ -106,7 +107,7 @@
   }
 
   &__list {
-    margin: 0 -16px 0 0;
+    margin: 0 -20px 0 0;
     padding: 0;
 
     list-style: none;
@@ -132,12 +133,10 @@
     }
   }
 
-  &__item {
-    padding: $gap;
-  }
-
   &__link {
+    display: block;
     transition: color 0.5s;
+    padding: $gap;
 
     &:hover {
       color: $color-accent;

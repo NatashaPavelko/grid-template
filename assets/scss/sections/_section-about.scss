@@ -1,8 +1,23 @@
 .about {
   background-color: $color-gray-light;
-  padding-top: 100px;
-  padding-bottom: 65px;
   letter-spacing: 0.055em;
+
+  @include lg-min {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  @include lg-md {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @include md-sm {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include sm {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
   &__title {
     @include lg-min {
@@ -53,9 +68,13 @@
   }
 
   &__content {
-    font-size: 1.125rem;
     font-family: $font-main;
-    line-height: 1.35;
+
+    @include lg-min {
+      & p {
+        font-size: 1.125rem;
+      }
+    }
 
     & p:first-of-type::after {
       @include lg-min {
@@ -76,7 +95,7 @@
       width: 2px;
       height: 200px;
       content: "";
-      background-color: $color-gray-light;
+      background-color: rgba(99, 117, 136, 0.1);
     }
 
     & p:first-of-type {
@@ -95,22 +114,8 @@
     justify-items: center;
 
     & img {
-      @include lg-min {
-        max-width: 271px;
-        min-height: 488px;
-      }
-      @include lg-md {
-        max-width: 255px;
-        min-height: 459px;
-      }
-      @include md-sm {
-        max-width: 236px;
-        min-height: 425px;
-      }
-      @include sm {
-        max-width: 271px;
-        min-height: 487px;
-      }
+      max-width: 100%;
+      max-height: 480px;
     }
   }
 }

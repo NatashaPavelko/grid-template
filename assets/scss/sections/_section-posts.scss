@@ -2,6 +2,23 @@
   padding-top: 100px;
   padding-bottom: 100px;
 
+  @include lg-min {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  @include lg-md {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @include md-sm {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include sm {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   &__container {
     @extend %container;
   }
@@ -85,7 +102,7 @@
 
 .post-item {
   transition: background-color 0.5s;
-  background-color: #eeeeee;
+  background-color: $color-gray-light-warm;
 
   &:hover {
     background-color: #d8d8d8;
@@ -124,14 +141,15 @@
   &__article {
     display: grid;
     align-content: center;
-    padding: 20px 20px 30px 20px;
-    letter-spacing: 0em;
+    padding: 20px 20px 20px 20px;
     color: $color-gray;
 
     & .post-item__article-title {
       font-family: $font-header;
       transition: color 0.5s;
       text-align: center;
+      letter-spacing: 0.05em;
+      font-size: 1.125rem;
     }
     & p {
       transition: color 0.5s;
