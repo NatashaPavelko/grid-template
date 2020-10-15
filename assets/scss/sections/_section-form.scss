@@ -39,16 +39,19 @@
     padding-right: 30px;
     padding-left: 30px;
 
+    &::placeholder {
+      color: $color-gray;
+    }
+
     &:hover,
     &:focus {
       border-color: rgba($color-light, 0.15);
       border-bottom-color: $color-light;
       background-color: rgba($color-light, 0.15);
-
-      &::placeholder,
-      &::placeholder {
-        color: $color-gray-warm;
-      }
+    }
+    &:hover::placeholder,
+    &:focus::placeholder {
+      color: $color-gray-warm;
     }
   }
 
