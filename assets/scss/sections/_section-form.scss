@@ -8,7 +8,11 @@
     display: grid;
     grid-gap: $gap;
 
-    @include md-min {
+    @include lg-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include lg-md {
       grid-template-columns: repeat(3, 1fr);
     }
     @include md-sm {

@@ -1,18 +1,46 @@
 .header-navbar {
+  position: relative;
+
+  display: grid;
+  align-items: center;
+
   letter-spacing: 0.1em;
-  @include md {
-    display: flex;
-    justify-content: flex-end;
+
+  justify-items: end;
+
+  &__list {
+    @include unlist(0 (-$gap) 0 0);
+    @include md-min {
+      display: grid;
+      justify-content: flex-end;
+
+      width: 100%;
+
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    }
+    @include md {
+      position: absolute;
+      top: 100%;
+      right: $gap;
+
+      display: none;
+
+      text-align: right;
+
+      background-color: rgba($color-gray-dark, 0.9);
+    }
   }
 
   &__btn {
     position: relative;
 
     width: 30px;
-    height: 22.5px;
+    height: 23px;
+    margin: $gap 0;
 
     cursor: pointer;
     transition: 0.5s ease-in-out;
+    transform: rotate(0deg);
 
     @include md-min {
       display: none;
@@ -23,122 +51,65 @@
 
     &-row {
       position: absolute;
+      left: 0;
 
       display: block;
 
-      width: 50%;
+      width: 100%;
       height: 3px;
 
       transition: 0.25s ease-in-out;
       transform: rotate(0deg);
 
       opacity: 1;
+      border-radius: 3px;
       background: $color-light;
 
-      &:nth-child(even) {
-        left: 50%;
-
-        border-radius: 0 3px 3px 0;
-      }
-
-      &:nth-child(odd) {
-        left: 0;
-
-        border-radius: 3px 0 0 3px;
-      }
-
-      &:nth-child(1),
-      &:nth-child(2) {
+      &:nth-of-type(1) {
         top: 0;
       }
 
-      &:nth-child(3),
-      &:nth-child(4) {
+      &:nth-of-type(2) {
         top: 9px;
       }
 
-      &:nth-child(5),
-      &:nth-child(6) {
+      &:nth-of-type(3) {
         top: 18px;
       }
     }
+
     &--active span {
-      &:nth-child(1),
-      &:nth-child(6) {
-        transform: rotate(45deg);
-      }
-      &:nth-child(2),
-      &:nth-child(5) {
-        transform: rotate(-45deg);
+      &:nth-of-type(1) {
+        top: 9px;
+
+        transform: rotate(135deg);
       }
 
-      &:nth-child(1) {
-        top: 3.5px;
-        left: 2.5px;
-      }
-
-      &:nth-child(2) {
-        top: 3.5px;
-        left: calc(50% - 2.5px);
-      }
-
-      &:nth-child(3) {
-        left: -50%;
+      &:nth-of-type(2) {
+        left: -30px;
 
         opacity: 0;
       }
 
-      &:nth-child(4) {
-        left: 100%;
+      &:nth-of-type(3) {
+        top: 9px;
 
-        opacity: 0;
+        transform: rotate(-135deg);
       }
-
-      &:nth-child(5) {
-        top: 14.5px;
-        left: 2.5px;
-      }
-
-      &:nth-child(6) {
-        top: 14.5px;
-        left: calc(50% - 2.5px);
-      }
-    }
-  }
-
-  &__list {
-    margin: 0 -20px 0 0;
-    padding: 0;
-
-    list-style: none;
-
-    font-size: 1.125rem;
-
-    @include md-min {
-      display: grid;
-      justify-content: end;
-
-      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-    }
-    @include md {
-      position: absolute;
-      top: 100%;
-      right: $gap * 2;
-
-      display: none;
-
-      text-align: right;
-
-      background-color: rgba($color-gray-dark, 0.9);
     }
   }
 
   &__link {
     display: block;
-    transition: color 0.5s;
+
     padding: $gap;
 
-    &:hover {
+    transition: color 0.5s;
+
+    font-size: 1.125rem;
+
+    &:hover,
+    &:focus {
       color: $color-accent;
     }
   }

@@ -23,13 +23,62 @@
     display: flex;
     justify-content: center;
 
+    @include lg-min {
+      & .btn {
+        min-width: 250px;
+      }
+    }
+
+    @include lg-md {
+      & .btn {
+        min-width: 200px;
+        height: 50px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+
+        letter-spacing: 0.1em;
+
+        font-size: 1rem;
+      }
+    }
+
     @include sm {
       align-items: center;
       flex-direction: column;
+
+      & .btn {
+        min-width: 170px;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        letter-spacing: 0.05em;
+
+        font-size: 1rem;
+      }
     }
 
-    .btn:first-of-type {
-      @include sm-min {
+    @include md-sm {
+      & .btn {
+        min-width: 170px;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        letter-spacing: 0.05em;
+
+        font-size: 1rem;
+      }
+    }
+
+    .btn:not(:last-of-type) {
+      @include lg-min {
+        margin-right: $gap;
+      }
+      @include lg-md {
+        margin-right: $gap;
+      }
+      @include md-sm {
         margin-right: $gap;
       }
       @include sm {

@@ -1,8 +1,10 @@
 .skills {
-  padding: 10px 10px 40px;
-
   @include sm {
     padding: $gap;
+  }
+
+  @include sm-min {
+    padding: 10px 10px 40px;
   }
 
   &__container {
@@ -22,7 +24,7 @@
     @include md-sm {
       grid-gap: 10px;
       grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
     }
     @include sm {
       grid-gap: $gap;
@@ -32,8 +34,19 @@
   }
 
   &__button {
-    display: flex;
-    justify-content: center;
+    @include sm-min {
+      display: flex;
+      justify-content: center;
+      & .btn-accent {
+        min-width: 350px;
+      }
+    }
+
+    @include sm {
+      & .btn-accent {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -48,7 +61,11 @@
   padding-top: 20px;
   overflow: hidden;
 
-  min-height: calc(33.33vh - 20px * 0.66);
+  @media (min-height: 691px) {
+    .skill-item {
+      min-height: calc(33.33vh - 20px * 0.66);
+    }
+  }
 
   background-color: $color-primary;
 
@@ -88,18 +105,18 @@
     left: 0;
     margin: 0;
 
-    @include lg-min {
+    // @include lg-min {
+    //   font-size: 1.25rem;
+    // }
+    @include md-min {
       font-size: 1.25rem;
     }
-    @include lg-md {
-      font-size: 1.25rem;
-    }
-    @include md-sm {
+    @include md {
       font-size: 1.125rem;
     }
-    @include sm {
-      font-size: 1.125rem;
-    }
+    // @include sm {
+    //   font-size: 1.125rem;
+    // }
   }
 
   &__link {
