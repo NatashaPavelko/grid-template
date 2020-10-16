@@ -62,9 +62,11 @@
   overflow: hidden;
 
   @media (min-height: 691px) {
-    .skill-item {
-      min-height: calc(33.33vh - 20px * 0.66);
-    }
+    min-height: calc(33.33vh - 20px * 0.66);
+  }
+
+  @media (max-height: 690px) {
+    min-height: calc(230px - 20px * 0.66);
   }
 
   background-color: $color-primary;
@@ -105,18 +107,12 @@
     left: 0;
     margin: 0;
 
-    // @include lg-min {
-    //   font-size: 1.25rem;
-    // }
     @include md-min {
       font-size: 1.25rem;
     }
     @include md {
       font-size: 1.125rem;
     }
-    // @include sm {
-    //   font-size: 1.125rem;
-    // }
   }
 
   &__link {

@@ -16,6 +16,7 @@
   }
 
   &__container {
+    display: grid;
     @extend %container;
   }
 

@@ -51,33 +51,16 @@ input:focus {
 }
 
 .btn {
+  display: block;
   border: 2px solid $color-light;
   background-color: rgba($color-light, 0.1);
-
-  // @include lg-min {
-  //   min-width: 250px;
-  //   height: 60px;
-  //   padding: 18px $gap;
-
-  //   font-size: 1.125rem;
-  // }
-  // @include lg-md {
-  //   min-width: 200px;
-  //   height: 50px;
-  //   padding: 14px $gap;
-
-  //   font-size: 1rem;
-  // }
-  // @include md {
-  //   min-width: 170px;
-  //   height: 40px;
-  //   padding: 10px $gap;
-  //   letter-spacing: 0.05em;
-  //   font-size: 1rem;
-  // }
+  height: 60px;
+  padding: 18px $gap;
+  font-size: 1.125rem;
 }
 
 .btn-accent {
+  display: block;
   height: 60px;
   padding: 18px $gap;
 

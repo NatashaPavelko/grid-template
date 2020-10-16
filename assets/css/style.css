@@ -514,11 +514,16 @@ input:focus {
 }
 
 .btn {
+  display: block;
   border: 2px solid #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
+  height: 60px;
+  padding: 18px 20px;
+  font-size: 1.125rem;
 }
 
 .btn-accent {
+  display: block;
   height: 60px;
   padding: 18px 20px;
   border: 2px solid #2d3651;
@@ -553,17 +558,14 @@ input:focus {
 
 .header-menu {
   position: absolute;
+  z-index: 1;
   top: 0;
-  right: 0;
   left: 0;
+  width: 100%;
 }
 
 .header-menu__container {
-  position: relative;
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   grid-template-columns: auto 1fr;
 }
 
@@ -681,6 +683,10 @@ input:focus {
 
 .header-content__title {
   text-align: center;
+}
+
+.header-content__container {
+  display: grid;
 }
 
 .header-content__buttons {
@@ -1166,7 +1172,7 @@ input:focus {
 }
 
 @media (min-height: 691px) {
-  .skill-item .skill-item {
+  .skill-item {
     min-height: calc(33.33vh - 20px * 0.66);
   }
 }
@@ -1372,6 +1378,12 @@ input:focus {
   .posts__title {
     font-size: 1.5rem;
     margin-bottom: 36px;
+  }
+}
+
+@media (max-height: 690px) {
+  .skill-item {
+    min-height: calc(230px - 20px * 0.66);
   }
 }
 
